@@ -14,9 +14,19 @@ strategy:
       python.version: '3.7.16'
 
 steps:
-  - task: UsePythonVersion@0
-    inputs:
-      versionSpec: '$(python.version)'
-      addToPath: True
-      githubToken: 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
-    displayName: 'Install version of python'
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '$(python.version)'
+    addToPath: True
+    githubToken: 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
+  displayName: 'Install version of python'
+  
+- script: |
+    python -m pip install --upgrade pip
+    pip install -r requirements.txt
+  displayName: 'Install dependencies'
+
+- script: |
+    pip install pytest pytest-azurepipelines
+    pytest
+  displayName: 'pytest'
