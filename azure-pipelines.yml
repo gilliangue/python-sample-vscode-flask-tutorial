@@ -9,6 +9,7 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 strategy:
+  parallel: 1
   matrix:
     Python27:
       python.version: '2.7'
@@ -18,8 +19,6 @@ strategy:
       python.version: '3.6'
     Python37:
       python.version: '3.7'
-  
-  maxParallel: 1
 
 steps:
 - task: UsePythonVersion@0
