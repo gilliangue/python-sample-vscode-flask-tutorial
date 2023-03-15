@@ -23,6 +23,7 @@ steps:
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '$(python.version)'
+    addToPath: True
   displayName: 'Use Python $(python.version)'
 
 - script: |
