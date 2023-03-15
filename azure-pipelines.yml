@@ -20,7 +20,6 @@ steps:
   inputs:
     versionSpec: '$(python.version)'
     addToPath: True
-    githubToken: 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
   displayName: 'Install version of python'
   
 - script: |
