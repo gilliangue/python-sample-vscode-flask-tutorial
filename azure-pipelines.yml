@@ -11,7 +11,7 @@ pool:
 strategy:
   matrix:
     Python38:
-      python.version: '3.11'
+      python.version: '3.7.16'
 
 steps:
   - task: UsePythonVersion@0
