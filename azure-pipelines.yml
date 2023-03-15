@@ -8,15 +8,14 @@ trigger:
 
 pool:
   default
+strategy:
+  matrix:
+    python.version: 3.8
 
-
-jobs:
-- job: Work
-  steps:
-  - script: echo Hello, world!
-    displayName: 'Run a one-line script'
-  - script: sudo apt install python3.6
-    displayName: 'Install python'
-
-  # This malformed command causes the job to fail
-  # Only run this command if the succeed variable is set to false
+steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '$(python.version)'
+      addToPath: True
+      githubToken: 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
+    displayName: 'Install version of python'
