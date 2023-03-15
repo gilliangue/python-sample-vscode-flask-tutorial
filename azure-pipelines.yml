@@ -24,6 +24,7 @@ steps:
   inputs:
     versionSpec: '$(python.version)'
     addToPath: True
+    architecture: x86
   displayName: 'Use Python $(python.version)'
 
 - script: |
